@@ -1,0 +1,15 @@
+{
+  "name": "unocss-preset-pastel",
+  "module": "src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@pastel-palette/colors": "^1.0.0-canary.1",
+    "@unocss/core": "^66.5.1"
+  }
+}
