@@ -1,9 +1,38 @@
 {
   "name": "unocss-preset-pastel",
-  "module": "src/index.ts",
+  "version": "0.1.0",
+  "description": "Pastel color system preset for UnoCSS",
+  "authors": "Elliot Xu <hack00mind@gmail.com>",
+  "keywords": [
+    "css",
+    "unocss",
+    "unocss-preset",
+    "tailwind4"
+  ],
+  "license": "AGPL-3.0-or-later",
   "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./bun": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/bun/index.js"
+    }
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun run build.ts"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "bun-plugin-dts": "^0.3.0"
   },
   "peerDependencies": {
     "typescript": "^5"
