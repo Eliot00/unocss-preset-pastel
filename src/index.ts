@@ -29,32 +29,46 @@ export const presetPastel = definePreset<PresetPastelOptions>((options = {}) => 
   const result: Record<string, string> = {}
   for (const [name, variants] of Object.entries(themeSystem.colors)) {
     result[name] = variants.light.oklch
+    result[`${name}-light`] = variants.light.oklch
+    result[`${name}-dark`] = variants.dark.oklch
   }
 
   for (const [name, variants] of Object.entries(themeSystem.grayScale)) {
     result[name] = variants.light.oklch
+    result[`${name}-light`] = variants.light.oklch
+    result[`${name}-dark`] = variants.dark.oklch
   }
 
   for (const [name, semanticColors] of Object.entries(themeSystem.element)) {
     for (const [semanticName, variants] of Object.entries(semanticColors)) {
       result[`${name}-${semanticName}`] = variants.light.oklch
+      result[`${name}-${semanticName}-light`] = variants.light.oklch
+      result[`${name}-${semanticName}-dark`] = variants.dark.oklch
     }
   }
 
   for (const [name, variants] of Object.entries(themeSystem.application)) {
     result[name] = variants.light.oklch
+    result[`${name}-light`] = variants.light.oklch
+    result[`${name}-dark`] = variants.dark.oklch
   }
 
   for (const [name, variants] of Object.entries(themeSystem.material)) {
     result[name] = variants.light.oklch
+    result[`${name}-light`] = variants.light.oklch
+    result[`${name}-dark`] = variants.dark.oklch
   }
 
   for (const [semanticName, variants] of Object.entries(themeSystem.background)) {
     result[`background-${semanticName}`] = variants.light.oklch
+    result[`background-${semanticName}-light`] = variants.light.oklch
+    result[`background-${semanticName}-dark`] = variants.dark.oklch
   }
 
   for (const [semanticName, variants] of Object.entries(themeSystem.fill)) {
     result[`fill-${semanticName}`] = variants.light.oklch
+    result[`fill-${semanticName}-light`] = variants.light.oklch
+    result[`fill-${semanticName}-dark`] = variants.dark.oklch
   }
 
   return {
