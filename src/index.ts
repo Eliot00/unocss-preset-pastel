@@ -19,12 +19,13 @@
 import { definePreset } from '@unocss/core'
 import { colorSystem } from '@pastel-palette/colors'
 import type { ColorSystem } from '@pastel-palette/colors'
+import type { Theme } from '@unocss/preset-wind4'
 
 export type PresetPastelOptions = {
   variant?: keyof ColorSystem
 }
 
-export const presetPastel = definePreset<PresetPastelOptions>((options = {}) => {
+export const presetPastel = definePreset<PresetPastelOptions, Theme>((options = {}) => {
   const themeSystem = colorSystem[options.variant || 'regular']
   const result: Record<string, string> = {}
   for (const [name, variants] of Object.entries(themeSystem.colors)) {
